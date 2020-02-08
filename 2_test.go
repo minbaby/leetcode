@@ -8,6 +8,30 @@ type _node struct {
 	Expect []int
 }
 
+func arrToList(l []int) *ListNode {
+	if len(l) == 0 {
+		return nil
+	}
+
+	head := &ListNode{
+		Val:  l[0],
+		Next: nil,
+	}
+
+	tmp := head
+	for i := 1; i < len(l); i++ {
+		node := &ListNode{
+			Val:  l[i],
+			Next: nil,
+		}
+
+		tmp.Next = node
+		tmp = node
+	}
+
+	return head
+}
+
 //
 // [2,4,3]
 // [5,6,4]
