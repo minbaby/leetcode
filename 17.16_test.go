@@ -15,6 +15,14 @@ func Test_massage(t *testing.T) {
 			args{[]int{1, 2, 3, 1}},
 			4,
 		},
+		{"[]",
+			args{[]int{}},
+			0,
+		},
+		{"[2,7,9,3,1]",
+			args{[]int{2, 7, 9, 3, 1}},
+			12,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

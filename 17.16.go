@@ -1,15 +1,28 @@
 package leetcode
 
-// 遍历法
 func massage(nums []int) int {
-	max := 0
 
-	for i := 0; i < len(nums); i++ {
-		cur := 0
-		for j := i; j < len(nums); j += 2 {
-			j
-		}
+	if len(nums) == 0 {
+		return 0
 	}
 
-	return max
+	yMax, nMax := nums[0], 0
+
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+
+	for i := 1; i < len(nums); i++ {
+		tYMax, tNMax := 0, 0
+		tNMax = max(yMax, nMax)
+		tYMax = nMax + nums[i]
+
+		yMax = tYMax
+		nMax = tNMax
+	}
+
+	return max(yMax, nMax)
 }
