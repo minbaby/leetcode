@@ -7,25 +7,25 @@ import (
 
 func Test_middleNode(t *testing.T) {
 	type args struct {
-		head *ListNode876
+		head *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *ListNode876
+		want *ListNode
 	}{
 		{
 			name: "[1,2,3,4,5]",
 			args: args{
-				&ListNode876{
+				&ListNode{
 					Val: 1,
-					Next: &ListNode876{
+					Next: &ListNode{
 						Val: 2,
-						Next: &ListNode876{
+						Next: &ListNode{
 							Val: 3,
-							Next: &ListNode876{
+							Next: &ListNode{
 								Val: 4,
-								Next: &ListNode876{
+								Next: &ListNode{
 									Val:  5,
 									Next: nil,
 								},
@@ -34,11 +34,11 @@ func Test_middleNode(t *testing.T) {
 					},
 				},
 			},
-			want: &ListNode876{
+			want: &ListNode{
 				Val: 3,
-				Next: &ListNode876{
+				Next: &ListNode{
 					Val: 4,
-					Next: &ListNode876{
+					Next: &ListNode{
 						Val:  5,
 						Next: nil,
 					},
@@ -48,17 +48,17 @@ func Test_middleNode(t *testing.T) {
 		{
 			name: "[1,2,3,4,5,6]",
 			args: args{
-				&ListNode876{
+				&ListNode{
 					Val: 1,
-					Next: &ListNode876{
+					Next: &ListNode{
 						Val: 2,
-						Next: &ListNode876{
+						Next: &ListNode{
 							Val: 3,
-							Next: &ListNode876{
+							Next: &ListNode{
 								Val: 4,
-								Next: &ListNode876{
+								Next: &ListNode{
 									Val: 5,
-									Next: &ListNode876{
+									Next: &ListNode{
 										Val:  6,
 										Next: nil,
 									},
@@ -68,11 +68,11 @@ func Test_middleNode(t *testing.T) {
 					},
 				},
 			},
-			want: &ListNode876{
+			want: &ListNode{
 				Val: 4,
-				Next: &ListNode876{
+				Next: &ListNode{
 					Val: 5,
-					Next: &ListNode876{
+					Next: &ListNode{
 						Val:  6,
 						Next: nil,
 					},
@@ -86,44 +86,44 @@ func Test_middleNode(t *testing.T) {
 		},
 		{
 			name: "[1]",
-			args: args{&ListNode876{
+			args: args{&ListNode{
 				Val:  1,
 				Next: nil,
 			}},
-			want: &ListNode876{
+			want: &ListNode{
 				Val:  1,
 				Next: nil,
 			},
 		},
 		{
 			name: "[1,2]",
-			args: args{&ListNode876{
+			args: args{&ListNode{
 				Val: 1,
-				Next: &ListNode876{
+				Next: &ListNode{
 					Val:  2,
 					Next: nil,
 				},
 			}},
-			want: &ListNode876{
+			want: &ListNode{
 				Val:  2,
 				Next: nil,
 			},
 		},
 		{
 			name: "[1,2,3]",
-			args: args{&ListNode876{
+			args: args{&ListNode{
 				Val: 1,
-				Next: &ListNode876{
+				Next: &ListNode{
 					Val: 2,
-					Next: &ListNode876{
+					Next: &ListNode{
 						Val:  3,
 						Next: nil,
 					},
 				},
 			}},
-			want: &ListNode876{
+			want: &ListNode{
 				Val: 2,
-				Next: &ListNode876{
+				Next: &ListNode{
 					Val:  3,
 					Next: nil,
 				},

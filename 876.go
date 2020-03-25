@@ -1,11 +1,6 @@
 package leetcode
 
-type ListNode876 struct {
-	Val  int
-	Next *ListNode876
-}
-
-func middleNode(head *ListNode876) *ListNode876 {
+func middleNode(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
