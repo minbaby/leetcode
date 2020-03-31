@@ -1,29 +1,39 @@
 package leetcode
 
-// 双向冒泡 or 鸡尾酒🍸排序
+// 快速排序
 func sortArray(nums []int) []int {
-	l := len(nums)
+	quickSort(nums, 0, len(nums)-1)
+	return nums
+}
 
-	low := 0
-	high := l - 1
-
-	for low < high {
-		for i := low; i < high; i++ {
-			if nums[i] > nums[i+1] {
-				nums[i], nums[i+1] = nums[i+1], nums[i]
-			}
-		}
-		high--
-
-		for i := high; i >= low; i-- {
-			if nums[i] > nums[i+1] {
-				nums[i], nums[i+1] = nums[i+1], nums[i]
-			}
-		}
-		low++
+func quickSort(nums []int, low int, high int) {
+	if low >= high || len(nums) == 0 || low < 0 || low > len(nums)-1 || high < 0 || high > len(nums)-1 {
+		return
 	}
 
-	return nums
+	key := p(nums, low, high)
+	quickSort(nums, low, key)
+	quickSort(nums, key+1, high)
+}
+
+func p(nums []int, low int, high int) int {
+	key := nums[low]
+
+	for low < high {
+		// 指针左移动
+		for low < high && nums[high] > key {
+			high--
+		}
+		for low < high && nums[low] <= key {
+			low++
+		}
+
+		if low != high {
+			nums[low], nums[high] = nums[high], nums[low]
+		}
+	}
+
+	return low
 }
 
 // 双向冒泡 or 鸡尾酒🍸排序
