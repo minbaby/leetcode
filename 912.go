@@ -1,13 +1,12 @@
 package leetcode
 
-// 快速排序
 func sortArray(nums []int) []int {
 	quickSort(nums, 0, len(nums)-1)
 	return nums
 }
 
 func quickSort(nums []int, low int, high int) {
-	if low >= high || len(nums) == 0 || low < 0 || low > len(nums)-1 || high < 0 || high > len(nums)-1 {
+	if low >= high {
 		return
 	}
 
@@ -24,8 +23,13 @@ func p(nums []int, low int, high int) int {
 		for low < high && nums[high] > key {
 			high--
 		}
-		for low < high && nums[low] <= key {
+		for low < high && nums[low] < key {
 			low++
+		}
+
+		if low != high && nums[low] == nums[high] {
+			high--
+			//low++
 		}
 
 		if low != high {
