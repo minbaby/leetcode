@@ -1,8 +1,44 @@
 package leetcode
 
+// mergeSort
 func sortArray(nums []int) []int {
-	quickSort(nums, 0, len(nums)-1)
-	return nums
+	l := len(nums)
+	if l < 2 {
+		return nums
+	}
+	mid := l / 2
+	left := sortArray(nums[:mid])
+	right := sortArray(nums[mid:])
+
+	return merge(left, right)
+}
+
+func merge(left, right []int) []int {
+	ret := make([]int, len(left)+len(right))
+	i, j, index := 0, 0, 0
+	for {
+		if left[i] > right[j] {
+			ret[index] = right[j]
+			j++
+			index++
+			if j >= len(right) {
+				copy(ret[index:], left[i:])
+				break
+			}
+		}
+
+		if left[i] <= right[j] {
+			ret[index] = left[i]
+			i++
+			index++
+			if i >= len(left) {
+				copy(ret[index:], right[j:])
+				break
+			}
+		}
+	}
+
+	return ret
 }
 
 func quickSort(nums []int, low int, high int) {
@@ -10,12 +46,12 @@ func quickSort(nums []int, low int, high int) {
 		return
 	}
 
-	key := p(nums, low, high)
+	key := partition(nums, low, high)
 	quickSort(nums, low, key)
 	quickSort(nums, key+1, high)
 }
 
-func p(nums []int, low int, high int) int {
+func partition(nums []int, low int, high int) int {
 	key := nums[low]
 
 	for low < high {
