@@ -3,7 +3,17 @@ kind: pipeline
 type: docker
 name: leetcode
 
+
+
 steps:
+  - name: check dns
+    image: busybox
+    commands:
+      - cat /etc/hosts
+      - nslooup gitea.minbaby.cc
+    extra_hosts:
+      - "drone.minbaby.cc:192.168.5.184"
+      - "gitea.minbaby.cc:192.168.5.184"
   - name: go test
     image: golang
     commands:
