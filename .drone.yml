@@ -13,6 +13,7 @@ steps:
     commands:
       - cat /etc/hosts
       - nslookup gitea.minbaby.cc
+      - export
     extra_hosts:
       - "drone.minbaby.cc:192.168.5.184"
       - "gitea.minbaby.cc:192.168.5.184"
