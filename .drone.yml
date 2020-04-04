@@ -5,7 +5,7 @@ name: leetcode
 
 steps:
   - name: go test
-    image: reg.qiniu.com/library/golang
+    image: golang
     commands:
       - go test
 
