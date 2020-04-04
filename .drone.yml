@@ -8,3 +8,9 @@ steps:
     image: golang
     commands:
       - go test
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
