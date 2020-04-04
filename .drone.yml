@@ -1,0 +1,10 @@
+---
+kind: pipeline
+type: docker
+name: test leetcode
+
+steps:
+  - name: go test
+    image: golang
+    commands:
+      - go test
