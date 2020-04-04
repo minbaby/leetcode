@@ -3,27 +3,12 @@ kind: pipeline
 type: docker
 name: leetcode
 
-clone:
-  disable: true
-
-
 steps:
-  - name: check dns
-    image: busybox
+  - name: go test
+    image: golang
     commands:
-      - cat /etc/hosts
-      - nslookup gitea.minbaby.cc
-      - export
-    extra_hosts:
-      - "drone.minbaby.cc:192.168.5.184"
-      - "gitea.minbaby.cc:192.168.5.184"
-#  - name: go test
-#    image: golang
-#    commands:
-#      - go test
-#    extra_hosts:
-#      - "drone.minbaby.cc:192.168.5.184"
-#      - "gitea.minbaby.cc:192.168.5.184"
+      - go test
+
 trigger:
   branch:
     - master
