@@ -3,6 +3,8 @@ kind: pipeline
 type: docker
 name: leetcode
 
+clone:
+  disable: true
 
 
 steps:
@@ -14,13 +16,13 @@ steps:
     extra_hosts:
       - "drone.minbaby.cc:192.168.5.184"
       - "gitea.minbaby.cc:192.168.5.184"
-  - name: go test
-    image: golang
-    commands:
-      - go test
-    extra_hosts:
-      - "drone.minbaby.cc:192.168.5.184"
-      - "gitea.minbaby.cc:192.168.5.184"
+#  - name: go test
+#    image: golang
+#    commands:
+#      - go test
+#    extra_hosts:
+#      - "drone.minbaby.cc:192.168.5.184"
+#      - "gitea.minbaby.cc:192.168.5.184"
 trigger:
   branch:
     - master
