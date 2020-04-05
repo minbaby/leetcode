@@ -9,6 +9,14 @@ steps:
     commands:
       - go test -failfast -timeout=3s -v
 
+  - name: send-wechat
+    image: erguotou/drone-instant-access
+    settings:
+      channel:
+        from_secret: CHANNEL
+      head: Drone Build Status
+      body: "${DRONE_BUILD_STATUS} at ${DRONE_REPO_BRANCH} branch"
+
 trigger:
   branch:
     - master
