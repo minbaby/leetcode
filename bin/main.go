@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"leetcode"
 )
 
 func main() {
-	var iiii int
-	fmt.Println(iiii)
+	x := leetcode.Constructor(10)
+	fmt.Println(x)
 }
