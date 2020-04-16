@@ -6,7 +6,7 @@ type MinStack struct {
 }
 
 /** initialize your data structure here. */
-func constructor() MinStack {
+func Constructor() MinStack {
 	return MinStack{}
 }
 

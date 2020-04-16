@@ -2,18 +2,19 @@ package leetcode
 
 type LRUCache struct {
 	capacity int
-	len int
-	head *node
-	tail *node
+	len      int
+	head     *node
+	tail     *node
+	data     map[int]*node
 }
 
 type node struct {
 	prev *node
 	next *node
-	val int
+	val  int
 }
 
-func Constructor(capacity int) LRUCache {
+func Constructor146(capacity int) LRUCache {
 	head := &node{}
 	tail := &node{}
 	head.next = tail
@@ -25,11 +26,13 @@ func Constructor(capacity int) LRUCache {
 		tail:     tail,
 	}
 }
-//
-//
-//func (this *LRUCache) Get(key int) int {
-//
-//}
+
+func (this *LRUCache) Get(key int) int {
+	if ok, v := this.data[key]; ok == true {
+
+	}
+}
+
 //
 //
 //func (this *LRUCache) Put(key int, value int)  {
