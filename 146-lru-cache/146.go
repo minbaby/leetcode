@@ -1,6 +1,8 @@
 package _46_lru_cache
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type LRUCache struct {
 	capacity int
@@ -8,6 +10,7 @@ type LRUCache struct {
 	head     *node
 	tail     *node
 	data     map[int]*node
+	vk       map[int]int
 }
 
 type node struct {
@@ -27,63 +30,80 @@ func Constructor(capacity int) LRUCache {
 		head:     head,
 		tail:     tail,
 		data:     map[int]*node{},
+		vk:       map[int]int{},
 	}
 }
 
 func (this *LRUCache) Get(key int) int {
-	if v, ok := this.data[key]; ok == true {
-		// TODO: move to first
-		p := this.head
-		for p.next != nil {
-			if p.val == v.val {
-				break
-			} else {
-				p = p.next
-			}
-		}
-		return v.val
-	} else {
+	if this.capacity == 0 {
 		return -1
 	}
+
+	if n, ok := this.data[key]; ok == true {
+		this.removeNode(n)
+		this.addToTail(n)
+		return n.val
+	}
+
+	return -1
 }
 
 func (this *LRUCache) Put(key int, value int) {
-	if n, ok := this.data[key]; ok == true {
-		// remove {n} from list
-		n.prev.next = n.next
-		n.next.prev = n.prev
+	if this.capacity == 0 {
+		return
+	}
 
-		// add {n} to list head
-		this.head.next.prev = n
-		n.next = this.head.next
-		this.head.next = n
-		n.prev = this.head
-
+	n := &node{val: value}
+	if v, ok := this.data[key]; ok == true {
+		this.removeNode(v)
+		this.addToTail(n)
 	} else {
 		// capacity
-		n = &node{val: value}
 		if this.len >= this.capacity {
-			this.tail.prev.prev = n
-			n.next = this.tail
-			n.prev = this.tail.prev
-			this.tail.prev = n
-		} else {
-			this.tail.prev.next = n
-			n.next = this.tail
-			n.prev = this.tail
-			this.tail.prev = n
+			last := this.tail.prev
+			this.removeNode(last)
+			delete(this.data, this.vk[last.val])
+			delete(this.vk, last.val)
+			this.len--
 		}
-		this.data[key] = n
+		this.addToTail(n)
+		this.len++
 	}
+	this.data[key] = n
+	this.vk[value] = key
 }
 
-func (this *LRUCache) Print() {
+func (this *LRUCache) Print(s string) {
 	p := this.head
+	c := 0
+	fmt.Printf("[%s-1] ", s)
 	for p != nil {
-		fmt.Printf("%v --> ", p)
+		fmt.Printf("%v(%p) --> ", p, p)
 		p = p.next
+		c++
+		if c > 100 {
+			fmt.Println("\nloop max: ")
+			break
+		}
 	}
 	fmt.Println()
+	fmt.Printf("[%s-2] %v", s, this.data)
+	fmt.Println()
+	fmt.Println()
+}
+
+// remove {n} from list
+func (this *LRUCache) removeNode(n *node) {
+	n.prev.next = n.next
+	n.next.prev = n.prev
+}
+
+func (this *LRUCache) addToTail(n *node) {
+	// add {n} to list head
+	this.head.next.prev = n
+	n.next = this.head.next
+	this.head.next = n
+	n.prev = this.head
 }
 
 /**
