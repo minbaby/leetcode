@@ -7,7 +7,7 @@ steps:
   - name: go test
     image: golang
     commands:
-      - go test -failfast -timeout=3s -v
+      - go test -failfast -timeout=3s -v ./...
 
   - name: send-wechat
     image: erguotou/drone-instant-access
