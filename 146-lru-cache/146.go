@@ -10,13 +10,13 @@ type LRUCache struct {
 	head     *node
 	tail     *node
 	data     map[int]*node
-	vk       map[int]int
 }
 
 type node struct {
 	prev *node
 	next *node
 	val  int
+	key  int
 }
 
 func Constructor(capacity int) LRUCache {
@@ -30,7 +30,6 @@ func Constructor(capacity int) LRUCache {
 		head:     head,
 		tail:     tail,
 		data:     map[int]*node{},
-		vk:       map[int]int{},
 	}
 }
 
@@ -41,7 +40,7 @@ func (this *LRUCache) Get(key int) int {
 
 	if n, ok := this.data[key]; ok == true {
 		this.removeNode(n)
-		this.addToTail(n)
+		this.addToHead(n)
 		return n.val
 	}
 
@@ -53,24 +52,23 @@ func (this *LRUCache) Put(key int, value int) {
 		return
 	}
 
-	n := &node{val: value}
+	n := &node{val: value, key: key}
 	if v, ok := this.data[key]; ok == true {
 		this.removeNode(v)
-		this.addToTail(n)
+		this.addToHead(n)
 	} else {
 		// capacity
 		if this.len >= this.capacity {
 			last := this.tail.prev
 			this.removeNode(last)
-			delete(this.data, this.vk[last.val])
-			delete(this.vk, last.val)
+
+			delete(this.data, last.key)
 			this.len--
 		}
-		this.addToTail(n)
+		this.addToHead(n)
 		this.len++
 	}
 	this.data[key] = n
-	this.vk[value] = key
 }
 
 func (this *LRUCache) Print(s string) {
@@ -78,7 +76,7 @@ func (this *LRUCache) Print(s string) {
 	c := 0
 	fmt.Printf("[%s-1] ", s)
 	for p != nil {
-		fmt.Printf("%v(%p) --> ", p, p)
+		fmt.Printf("[%v (%p)] => ", p, p)
 		p = p.next
 		c++
 		if c > 100 {
@@ -92,23 +90,15 @@ func (this *LRUCache) Print(s string) {
 	fmt.Println()
 }
 
-// remove {n} from list
 func (this *LRUCache) removeNode(n *node) {
 	n.prev.next = n.next
 	n.next.prev = n.prev
 }
 
-func (this *LRUCache) addToTail(n *node) {
+func (this *LRUCache) addToHead(n *node) {
 	// add {n} to list head
 	this.head.next.prev = n
 	n.next = this.head.next
 	this.head.next = n
 	n.prev = this.head
 }
-
-/**
- * Your LRUCache object will be instantiated and called as such:
- * obj := Constructor(capacity);
- * param_1 := obj.Get(key);
- * obj.Put(key,value);
- */
