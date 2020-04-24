@@ -31,3 +31,13 @@ func ParseWant(str string) ([]interface{}, error) {
 
 	return want, nil
 }
+
+func ParseIntArray(str string) []int {
+	var ret []int
+	err := json.Unmarshal([]byte(str), &ret)
+	if err != nil {
+		return nil
+	}
+
+	return ret
+}
