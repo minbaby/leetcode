@@ -1,6 +1,8 @@
 package Tools
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 func ParseOp(str string) ([]string, error) {
 	var op []string
