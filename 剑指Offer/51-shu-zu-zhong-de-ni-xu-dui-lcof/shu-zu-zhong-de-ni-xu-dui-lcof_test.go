@@ -50,6 +50,10 @@ func Test_reversePairs(t *testing.T) {
 			}
 		})
 
+		if Tools.InCI() {
+			continue
+		}
+
 		t.Run(tt.name+"|双循环", func(t *testing.T) {
 			if got := reversePairs1(tt.args.nums); got != tt.want {
 				t.Errorf("reversePairs() = %v, want %v", got, tt.want)
