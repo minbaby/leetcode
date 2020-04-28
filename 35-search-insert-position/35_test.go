@@ -1,6 +1,9 @@
 package _5_search_insert_position
 
-import "testing"
+import (
+	"leetcode/Tools"
+	"testing"
+)
 
 func Test_searchInsert(t *testing.T) {
 	type args struct {
@@ -54,9 +57,11 @@ func Test_searchInsert(t *testing.T) {
 				t.Errorf("searchInsert() = %v, want %v", got, tt.want)
 			}
 		})
-	}
 
-	for _, tt := range tests {
+		if Tools.InCI() {
+			continue
+		}
+
 		t.Run(tt.name, func(t *testing.T) {
 			if got := searchInsert2(tt.args.nums, tt.args.target); got != tt.want {
 				t.Errorf("searchInsert() = %v, want %v", got, tt.want)
