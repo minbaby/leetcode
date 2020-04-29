@@ -1,5 +1,7 @@
 package _55_min_stack
 
+import "fmt"
+
 type MinStack struct {
 	Val    []int
 	MinVal int
@@ -50,6 +52,10 @@ func (this *MinStack) Top() int {
 
 func (this *MinStack) GetMin() int {
 	return this.MinVal
+}
+
+func (this *MinStack) Print(s string) {
+	fmt.Println(s)
 }
 
 /**
