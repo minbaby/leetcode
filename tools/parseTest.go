@@ -43,3 +43,13 @@ func ParseIntArray(str string) []int {
 
 	return ret
 }
+
+func ParseIntArray2(str string) [][]int {
+	var ret [][]int
+	err := json.Unmarshal([]byte(str), &ret)
+	if err != nil {
+		return nil
+	}
+
+	return ret
+}

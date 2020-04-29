@@ -12,6 +12,7 @@ steps:
 
   - name: send-wechat
     image: erguotou/drone-instant-access
+    pull: if-not-exists
     settings:
       channel:
         from_secret: CHANNEL
