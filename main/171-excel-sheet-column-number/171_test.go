@@ -1,7 +1,7 @@
 package _71_excel_sheet_column_number
 
 import (
-	"leetcode/Tools"
+	"leetcode/tools"
 	"testing"
 )
 
@@ -36,7 +36,7 @@ func Test_titleToNumber(t *testing.T) {
 				t.Errorf("titleToNumber() = %v, want %v", got, tt.want)
 			}
 		})
-		if Tools.InCI() {
+		if tools.InCI() {
 			continue
 		}
 		t.Run(tt.name+"#2", func(t *testing.T) {

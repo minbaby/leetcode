@@ -1,7 +1,7 @@
 package _5_search_insert_position
 
 import (
-	"leetcode/Tools"
+	"leetcode/tools"
 	"testing"
 )
 
@@ -58,7 +58,7 @@ func Test_searchInsert(t *testing.T) {
 			}
 		})
 
-		if Tools.InCI() {
+		if tools.InCI() {
 			continue
 		}
 

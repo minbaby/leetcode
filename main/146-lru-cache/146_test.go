@@ -2,7 +2,7 @@ package _46_lru_cache
 
 import (
 	"fmt"
-	"leetcode/Tools"
+	"leetcode/tools"
 	"testing"
 )
 
@@ -52,17 +52,17 @@ func TestLogic5(t *testing.T) {
 func runLogic(t *testing.T, strOp, strParam, strWant string) {
 	var err error
 	var opList []string
-	if opList, err = Tools.ParseOp(strOp); err != nil {
+	if opList, err = tools.ParseOp(strOp); err != nil {
 		t.Error(err)
 	}
 
 	var argList [][]int
-	if argList, err = Tools.ParseParam(strParam); err != nil {
+	if argList, err = tools.ParseParam(strParam); err != nil {
 		t.Error(err)
 	}
 
 	var wantList []interface{}
-	if wantList, err = Tools.ParseWant(strWant); err != nil {
+	if wantList, err = tools.ParseWant(strWant); err != nil {
 		t.Error(err)
 	}
 	var instance LRUCache

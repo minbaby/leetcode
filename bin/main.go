@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	_46_lru_cache "leetcode/146-lru-cache"
+	_46_lru_cache "leetcode/main/146-lru-cache"
 )
 
 func main() {
