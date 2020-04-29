@@ -1,4 +1,4 @@
-package Tools
+package tools
 
 import (
 	"reflect"
@@ -77,6 +77,14 @@ func TestParseParam(t *testing.T) {
 			},
 			false,
 		},
+		{
+			"[",
+			args{
+				"[",
+			},
+			nil,
+			true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -121,6 +129,14 @@ func TestParseWant(t *testing.T) {
 			},
 			false,
 		},
+		{
+			"[",
+			args{
+				"[",
+			},
+			nil,
+			true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -131,6 +147,39 @@ func TestParseWant(t *testing.T) {
 			}
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("ParseWant() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestParseIntArray(t *testing.T) {
+	type args struct {
+		str string
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			"[1,2,3]",
+			args{
+				"[1,2,3]",
+			},
+			[]int{1, 2, 3},
+		},
+		{
+			"[",
+			args{
+				"[",
+			},
+			nil,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := ParseIntArray(tt.args.str); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("ParseIntArray() = %v, want %v", got, tt.want)
 			}
 		})
 	}

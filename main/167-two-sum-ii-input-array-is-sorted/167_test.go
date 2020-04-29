@@ -1,7 +1,7 @@
 package _67_two_sum_ii_input_array_is_sorted
 
 import (
-	"leetcode/Tools"
+	"leetcode/tools"
 	"reflect"
 	"testing"
 )
@@ -45,7 +45,7 @@ func Test_twoSum(t *testing.T) {
 				t.Errorf("twoSum() = %v, want %v", got, tt.want)
 			}
 		})
-		if Tools.InCI() {
+		if tools.InCI() {
 			continue
 		}
 		t.Run(tt.name+"#my", func(t *testing.T) {
