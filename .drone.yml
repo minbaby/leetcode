@@ -5,9 +5,10 @@ name: leetcode
 
 steps:
   - name: go test
-    image: golang
+    image: golang:1.14.2-alpine3.11
+    pull: if-not-exists
     commands:
-      - CI_ENV=1 go test -failfast -timeout=5s -v ./...
+      - CI_ENV=1 go test -failfast -timeout=3s -v ./...
 
   - name: send-wechat
     image: erguotou/drone-instant-access
