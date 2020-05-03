@@ -8,7 +8,7 @@ steps:
     image: golang:1.14.2-alpine3.11
     pull: if-not-exists
     commands:
-      - CI_ENV=1 go test -failfast -timeout=3s -v ./...
+      - CI_ENV=1 go test -failfast -timeout=3s ./...
 
   - name: send-wechat
     image: erguotou/drone-instant-access
@@ -16,5 +16,5 @@ steps:
     settings:
       channel:
         from_secret: CHANNEL
-      head: Drone Build Status
-      body: "${DRONE_BUILD_STATUS} at ${DRONE_REPO_BRANCH} branch"
+      head: "[${DRONE_REPO}] Build Status"
+      body: "[${DRONE_REPO}] ${DRONE_BUILD_STATUS} at ${DRONE_BRANCH} branch"
