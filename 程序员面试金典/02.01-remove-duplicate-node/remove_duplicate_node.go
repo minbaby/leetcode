@@ -4,7 +4,6 @@ import (
 	"fmt"
 )
 
-// ListNode do nothing
 type ListNode struct {
 	Val  int
 	Next *ListNode
