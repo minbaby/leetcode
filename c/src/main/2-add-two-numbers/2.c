@@ -4,21 +4,18 @@
 #include "../../utils.h"
 
 struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
-    struct ListNode *head = (struct ListNode *) malloc(sizeof(struct ListNode));
+    struct ListNode *head = malloc(sizeof(struct ListNode));
+    head->val = 0;
+    head->next = NULL;
 
     int plus = 0;
     struct ListNode *pp = head;
+    int _val;
     while (l1 != NULL && l2 != NULL) {
-        int _val = l1->val + l2->val + plus;
-        plus = 0;
+        _val = l1->val + l2->val + plus;
+        HANDLE_VAL(_val);
 
-        if (_val >= 10) {
-            _val -= 10;
-            plus++;
-        }
-
-        struct ListNode *_new = (struct ListNode *) malloc(sizeof(struct ListNode));
-        _new->val = _val;
+        INIT_NODE(_new, _val);
 
         pp->next = _new;
         pp = _new;
@@ -28,8 +25,10 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
     }
 
     while (l1 != NULL) {
-        struct ListNode *_new = (struct ListNode *) malloc(sizeof(struct ListNode));
-        _new->val = l1->val;
+        _val = l1->val + plus;
+
+        HANDLE_VAL(_val);
+        INIT_NODE(_new, _val);
 
         pp->next = _new;
         pp = _new;
@@ -38,13 +37,21 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
     }
 
     while (l2 != NULL) {
-        struct ListNode *_new = (struct ListNode *) malloc(sizeof(struct ListNode));
-        _new->val = l2->val;
+        _val = l2->val + plus;
+
+        HANDLE_VAL(_val);
+        INIT_NODE(_new, _val);
 
         pp->next = _new;
         pp = _new;
 
         l2 = l2->next;
+    }
+
+    if (plus) {
+        INIT_NODE(_new, 1);
+
+        pp->next = _new;
     }
 
     return head->next;
