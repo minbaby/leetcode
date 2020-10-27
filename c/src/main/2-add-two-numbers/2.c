@@ -24,29 +24,8 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
         l2 = l2->next;
     }
 
-    while (l1 != NULL) {
-        _val = l1->val + plus;
-
-        HANDLE_VAL(_val);
-        INIT_NODE(_new, _val);
-
-        pp->next = _new;
-        pp = _new;
-
-        l1 = l1->next;
-    }
-
-    while (l2 != NULL) {
-        _val = l2->val + plus;
-
-        HANDLE_VAL(_val);
-        INIT_NODE(_new, _val);
-
-        pp->next = _new;
-        pp = _new;
-
-        l2 = l2->next;
-    }
+    HANDLE_X(l1);
+    HANDLE_X(l2);
 
     if (plus) {
         INIT_NODE(_new, 1);

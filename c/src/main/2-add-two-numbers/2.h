@@ -21,3 +21,13 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2);
                 _val -= 10; \
                 plus++; \
             }
+
+#define HANDLE_X(list) \
+     while (list != NULL) { \
+        _val = list->val + plus;\
+        HANDLE_VAL(_val); \
+        INIT_NODE(_new, _val); \
+        pp->next = _new; \
+        pp = _new; \
+        list = list->next; \
+    }
