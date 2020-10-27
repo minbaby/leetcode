@@ -1,59 +1,51 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "2.h"
-
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
+#include "../../utils.h"
 
 struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
-    struct ListNode *ret = &((struct ListNode) {.val = 0});
-
-    struct ListNode head = {.val=0};
+    struct ListNode *head = (struct ListNode *) malloc(sizeof(struct ListNode));
 
     int plus = 0;
-    struct ListNode *p = &head;
+    struct ListNode *pp = head;
     while (l1 != NULL && l2 != NULL) {
-        int val = l1->val + l2->val + plus;
-        if (plus) {
-            plus--;
-        }
-        if (val > 9) {
-            val -= 10;
+        int _val = l1->val + l2->val + plus;
+        plus = 0;
+
+        if (_val >= 10) {
+            _val -= 10;
             plus++;
         }
-        struct ListNode _new = {.val = val};
-        p->next = &_new;
-        p = &_new;
+
+        struct ListNode *_new = (struct ListNode *) malloc(sizeof(struct ListNode));
+        _new->val = _val;
+
+        pp->next = _new;
+        pp = _new;
 
         l1 = l1->next;
         l2 = l2->next;
     }
 
-//    while (l1 != NULL) {
-//        struct ListNode _new = {.val = l1->val};
-//        p->next = &_new;
-//        p = &_new;
-//
-//        l1 = l1->next;
-//    }
-//
-//    while (l2 != NULL) {
-//        struct ListNode _new = {.val = l2->val};
-//        p->next = &_new;
-//        p = &_new;
-//
-//        l2 = l2->next;
-//    }
+    while (l1 != NULL) {
+        struct ListNode *_new = (struct ListNode *) malloc(sizeof(struct ListNode));
+        _new->val = l1->val;
 
-    struct ListNode *x = &head;
-    while (x != NULL) {
-        printf("%d -", x->val);
-        x = x->next;
+        pp->next = _new;
+        pp = _new;
+
+        l1 = l1->next;
     }
 
-    return head.next;
+    while (l2 != NULL) {
+        struct ListNode *_new = (struct ListNode *) malloc(sizeof(struct ListNode));
+        _new->val = l2->val;
+
+        pp->next = _new;
+        pp = _new;
+
+        l2 = l2->next;
+    }
+
+    return head->next;
 }

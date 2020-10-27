@@ -1,9 +1,8 @@
-#include <criterion/criterion.h>
 #include <stdio.h>
-#include "../../utils.h"
-#include "2.h"
+#include "./2-add-two-numbers/2.h"
+#include "../utils.h"
 
-Test(AddTwoNumbers001, a001) {
+int main(int args, char** arv) {
     int l1[] = {2, 4, 3};
     struct ListNode *h1 = UIntToList(l1, 3);
 
@@ -13,7 +12,9 @@ Test(AddTwoNumbers001, a001) {
     int l3[] = {7, 0, 8};
     struct ListNode *expected = UIntToList(l3, 3);
 
-    struct ListNode* ret = addTwoNumbers(h1, h2);
+    UPrintList(h1);
+    UPrintList(h2);
+    UPrintList(expected);
 
-    cr_assert(UListEqual(expected, ret), "yes");
+    UPrintList(addTwoNumbers(h1, h2));
 }
