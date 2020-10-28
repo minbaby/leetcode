@@ -13,11 +13,13 @@ pkg_check_modules(UNITTEST criterion)
 
 set(HEADER_FILES
         src/main/2-add-two-numbers/2.h
-        src/utils.h)
+        src/utils.h
+        src/main/1-two-sum/1.h)
 
 set(SOURCE_FILES
         src/main/2-add-two-numbers/2.c
-        src/utils.c)
+        src/utils.c
+        src/main/1-two-sum/1.c)
 
 add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
 
@@ -25,7 +27,8 @@ add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
 if (UNITTEST_FOUND)
     #设置单元测试的源码
     set(UNITTEST_SOURCE
-            src/main/2-add-two-numbers/2_test.c)
+            src/main/2-add-two-numbers/2_test.c
+            src/main/1-two-sum/1_test.c)
 
     #打开cmake测试编译
     enable_testing()
