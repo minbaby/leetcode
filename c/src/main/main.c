@@ -1,16 +1,9 @@
 #include <stdio.h>
-#include "../utils.h"
-#include "1-two-sum/1.h"
+#include "3-longest-substring-without-repeating-characters/3.h"
 
-int main(int args, char** arv) {
-    int nums[] = {2, 7, 11, 15};
-    int numsSize = 4;
-    int target = 9;
-    int *returnSize;
+int main(int args, char **arv) {
+    char *str = "dvdf";
 
-    int expected[] = {0, 1};
-    int expectedSize = 2;
-
-    twoSum(nums, numsSize, target, returnSize);
-
+    int x = lengthOfLongestSubstring(str);
+    printf("%d", x);
 }
