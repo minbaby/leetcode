@@ -16,6 +16,7 @@ set(HEADER_FILES
         src/utils.h
         src/main/1-two-sum/1.h
         src/main/3-longest-substring-without-repeating-characters/3.h
+        src/main/4-findMedianSortedArrays/4.h
         )
 
 set(SOURCE_FILES
@@ -23,6 +24,7 @@ set(SOURCE_FILES
         src/utils.c
         src/main/1-two-sum/1.c
         src/main/3-longest-substring-without-repeating-characters/3.c
+        src/main/4-findMedianSortedArrays/4.c
         )
 
 add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
@@ -31,8 +33,11 @@ add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
 if (UNITTEST_FOUND)
     #设置单元测试的源码
     set(UNITTEST_SOURCE
+            src/main/1-two-sum/1_test.c
             src/main/2-add-two-numbers/2_test.c
-            src/main/1-two-sum/1_test.c src/main/3-longest-substring-without-repeating-characters/3_test.c)
+            src/main/3-longest-substring-without-repeating-characters/3_test.c
+            src/main/4-findMedianSortedArrays/4_test.c
+            )
 
     #打开cmake测试编译
     enable_testing()

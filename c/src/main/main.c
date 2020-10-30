@@ -1,9 +1,12 @@
 #include <stdio.h>
-#include "3-longest-substring-without-repeating-characters/3.h"
+#include "4-findMedianSortedArrays/4.h"
 
 int main(int args, char **arv) {
-    char *str = "tmmzuxt";
+    int nums1[] = {1, 3};
+    int nums2[] = {2};
+    int nums1Size = 2;
+    int nums2Size = 1;
 
-    int x = lengthOfLongestSubstring(str);
-    printf("%d====", x);
+    double ret = findMedianSortedArrays(nums1, nums1Size, nums2, nums2Size);
+    printf("%f====", ret);
 }
