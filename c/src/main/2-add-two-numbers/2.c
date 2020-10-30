@@ -4,9 +4,7 @@
 #include "../../utils.h"
 
 struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
-    struct ListNode *head = malloc(sizeof(struct ListNode));
-    head->val = 0;
-    head->next = NULL;
+    INIT_NODE(head, 0);
 
     int plus = 0;
     struct ListNode *pp = head;
