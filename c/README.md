@@ -3,12 +3,23 @@
 
 ## unit test
 
-
 ```bash
 # https://github.com/Snaipe/Criterion
-sudo add-apt-repository ppa:snaipewastaken/ppa
-sudo apt-get update
-sudo apt-get install criterion-dev
+mkdir -p $HOME/code/repos
+git clone https://github.com/Snaipe/Criterion.git $HOME/code/repos
+sudo apt install -y build-essential \
+    meson \
+    nanopb \
+    libgrpc++-dev \
+    libgit2-dev \
+    libffi-dev \
+    libboxfort-dev \
+    libnanomsg-dev \
+    libboxfort-dev \
+    libnanopb-dev
+
+sudo meson build
+sudo ninja -C build install
 
 sudo ldconf
 ```
