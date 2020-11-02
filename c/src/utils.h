@@ -12,7 +12,7 @@ void UPrintList(struct ListNode *list);
 
 struct ListNode *UIntToList(const int list[], int num);
 
-bool UListEqual(struct ListNode *l1, struct ListNode *l2);
+bool utils_list_cmp(struct ListNode *l1, struct ListNode *l2);
 
 void utils_print_array(char *str);
 #endif //LEET_CODE_UTILS_H

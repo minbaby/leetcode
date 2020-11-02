@@ -13,9 +13,14 @@ Test(AddTwoNumbers001, a001) {
     int l3[] = {7, 0, 8};
     struct ListNode *expected = UIntToList(l3, 3);
 
-    struct ListNode* ret = addTwoNumbers(h1, h2);
+    struct ListNode *ret = addTwoNumbers(h1, h2);
 
-    cr_assert(UListEqual(expected, ret), "not equal");
+    cr_assert(utils_list_cmp(expected, ret), "not equal");
+
+    utils_list_free(h1);
+    utils_list_free(h2);
+    utils_list_free(expected);
+    utils_list_free(ret);
 }
 
 Test(AddTwoNumbers001, a002) {
@@ -30,5 +35,10 @@ Test(AddTwoNumbers001, a002) {
 
     struct ListNode* ret = addTwoNumbers(h1, h2);
 
-    cr_assert(UListEqual(expected, ret), "not equal");
+    cr_assert(utils_list_cmp(expected, ret), "not equal");
+
+    utils_list_free(h1);
+    utils_list_free(h2);
+    utils_list_free(expected);
+    utils_list_free(ret);
 }

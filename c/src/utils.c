@@ -25,19 +25,25 @@ void UPrintList(struct ListNode *list) {
 
 struct ListNode *UIntToList(const int list[], int num) {
     struct ListNode *head = (struct ListNode *) malloc(sizeof(struct ListNode));
+    head->val = 0;
+    head->next = NULL;
 
     struct ListNode *p = head;
     for (int i = 0; i < num; i++) {
         struct ListNode *n = (struct ListNode *) malloc(sizeof(struct ListNode));
         n->val = list[i];
+        n->next = NULL;
+
         p->next = n;
         p = n;
     }
 
-    return head->next;
+    struct ListNode *ret =  head->next;
+    free(head);
+    return ret;
 }
 
-bool UListEqual(struct ListNode *l1, struct ListNode *l2) {
+bool utils_list_cmp(struct ListNode *l1, struct ListNode *l2) {
     while (l1 != NULL && l2 != NULL) {
         if (l1->val != l2->val) {
             return false;
@@ -51,6 +57,15 @@ bool UListEqual(struct ListNode *l1, struct ListNode *l2) {
     }
 
     return true;
+}
+
+void utils_list_free(struct ListNode *list) {
+    struct ListNode *tmp;
+    while (list != NULL) {
+        tmp = list;
+        list = list->next;
+        free(tmp);
+    }
 }
 
 void utils_print_array(char *str) {

@@ -8,7 +8,7 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
 
     int plus = 0;
     struct ListNode *pp = head;
-    int _val;
+    int _val=0;
     while (l1 != NULL && l2 != NULL) {
         _val = l1->val + l2->val + plus;
         HANDLE_VAL(_val);
@@ -31,5 +31,7 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
         pp->next = _new;
     }
 
-    return head->next;
+    struct ListNode *ret = head->next;
+    free(head);
+    return ret;
 }

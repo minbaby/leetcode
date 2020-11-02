@@ -14,6 +14,8 @@ Test(TwoSum, a001) {
 
     cr_assert_arr_eq(act, expected, 2, "error");
     cr_assert_eq(expectedSize, returnSize, "num error");
+
+    free(act);
 }
 
 Test(TwoSum, a002) {
@@ -29,4 +31,6 @@ Test(TwoSum, a002) {
 
     cr_assert_arr_eq(act, expected, 2, "value error");
     cr_assert_eq(expectedSize, returnSize, "num error");
+
+    free(act);
 }
