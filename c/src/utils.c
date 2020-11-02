@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "utils.h"
 
 const int MAX_LOOP = 100;
@@ -50,4 +51,10 @@ bool UListEqual(struct ListNode *l1, struct ListNode *l2) {
     }
 
     return true;
+}
+
+void utils_print_array(char *str) {
+    for (int i = 0; i < strlen(str); ++i) {
+        printf("[%c]\t", str[i]);
+    }
 }
