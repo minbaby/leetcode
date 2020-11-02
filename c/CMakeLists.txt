@@ -11,6 +11,9 @@ find_package(PkgConfig)
 #通过pkg-config获得criterion
 pkg_check_modules(UNITTEST criterion)
 
+set (CMAKE_C_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
+set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
+
 set(HEADER_FILES
         src/main/2-add-two-numbers/2.h
         src/utils.h

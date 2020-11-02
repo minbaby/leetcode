@@ -29,7 +29,9 @@ char *longestPalindrome(char *s) {
         }
     }
 
-    char *ret = malloc(sizeof(char) * (end - start + 1));
+
+    char *ret = (char *) malloc(sizeof(char) * (end - start + 2));
+    memset(ret, 0, sizeof(char) * (end - start + 2));
     strncpy(ret, s + start, end - start + 1);
     return ret;
 }

@@ -13,7 +13,7 @@ int lengthOfLongestSubstring(char *s) {
     int _l;
     int v;
 
-    while (s[p_tail] != NULL) {
+    while (s[p_tail] != '\0') {
         int index = (int) s[p_tail];
         if ((v = hash[index]) != -1) {
             // 发生了重复
