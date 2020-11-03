@@ -10,7 +10,7 @@ struct ListNode {
 
 void UPrintList(struct ListNode *list);
 
-struct ListNode *UIntToList(const int list[], int num);
+struct ListNode *utils_list_create(const int *list, int num);
 
 bool utils_list_cmp(struct ListNode *l1, struct ListNode *l2);
 

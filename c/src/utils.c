@@ -23,7 +23,7 @@ void UPrintList(struct ListNode *list) {
     printf("\n========e========\n");
 }
 
-struct ListNode *UIntToList(const int list[], int num) {
+struct ListNode *utils_list_create(const int *list, int num) {
     struct ListNode *head = (struct ListNode *) malloc(sizeof(struct ListNode));
     head->val = 0;
     head->next = NULL;

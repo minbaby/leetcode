@@ -21,6 +21,7 @@ set(HEADER_FILES
         src/main/3-longest-substring-without-repeating-characters/3.h
         src/main/4-findMedianSortedArrays/4.h
         src/main/5-longest-palindromic-substring/5.h
+        src/main/6-zigzag-conversion/6.h
         )
 
 set(SOURCE_FILES
@@ -30,6 +31,7 @@ set(SOURCE_FILES
         src/main/3-longest-substring-without-repeating-characters/3.c
         src/main/4-findMedianSortedArrays/4.c
         src/main/5-longest-palindromic-substring/5.c
+        src/main/6-zigzag-conversion/6.c
         )
 
 add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
@@ -43,6 +45,7 @@ if (UNITTEST_FOUND)
             src/main/3-longest-substring-without-repeating-characters/3_test.c
             src/main/4-findMedianSortedArrays/4_test.c
             src/main/5-longest-palindromic-substring/5_test.c
+            src/main/6-zigzag-conversion/6_test.c
             )
 
     #打开cmake测试编译
