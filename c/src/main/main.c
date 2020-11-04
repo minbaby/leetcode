@@ -1,14 +1,8 @@
-#include "../utils.h"
-#include "6-zigzag-conversion/6.h"
+#include <limits.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include "7-reverse-integer/7.h"
 
 int main(int args, char **arv) {
-    char *s = "LEETCODEISHIRING";
-    int numRows = 100;
-    char *o = "LCIRETOESIIGEDHN";
-
-    char * ret = convert(s, numRows);
-    printf("[%s]", ret);
-    free(ret);
+    printf("%d#####%d", 1, -1);
+//    printf("%d", reverse(INT_MIN));
 }
