@@ -3,12 +3,19 @@
 #include <stdlib.h>
 #include "6.h"
 
-// 这个有个问题： 返回的 char*, 有的需要free 有的不需要，暂时还不知道有什么好方法来搞，暂时先放着把。
 char *convert(char *s, int numRows) {
     int len = (int) strlen(s);
 
+    size_t retLen = sizeof(char) * (len + 1);
+    char *ret = (char *) malloc(retLen);
+    memset(ret, '\0', retLen);
+
     if (len <= 2 || numRows == 1 || len < numRows) {
-        return s;
+        for (int i = 0; i < len; ++i) {
+            ret[i] = s[i];
+        }
+
+        return ret;
     }
 
     int data[numRows][len];
@@ -31,11 +38,6 @@ char *convert(char *s, int numRows) {
         }
         k++;
     }
-
-
-    size_t retLen = sizeof(char) * (len + 1);
-    char *ret = (char *) malloc(retLen);
-    memset(ret, '\0', retLen);
 
     k = 0;
     for (int l = 0; l < numRows; ++l) {

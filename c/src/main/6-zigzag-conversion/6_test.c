@@ -20,3 +20,23 @@ Test(zigzag_conversion, a002) {
     cr_assert_str_eq(o, ret);
     free(ret);
 }
+
+Test(zigzag_conversion, a003) {
+    char *s = "LEETCODEISHIRING";
+    int numRows = 100;
+    char *o = "LEETCODEISHIRING";
+
+    char *ret = convert(s, numRows);
+    cr_assert_str_eq(o, ret);
+    free(ret);
+}
+
+Test(zigzag_conversion, a004) {
+    char *s = "LE";
+    int numRows = 100;
+    char *o = "LE";
+
+    char *ret = convert(s, numRows);
+    cr_assert_str_eq(o, ret);
+    free(ret);
+}
