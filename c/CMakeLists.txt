@@ -24,6 +24,7 @@ set(HEADER_FILES
         src/main/6-zigzag-conversion/6.h
         src/main/7-reverse-integer/7.h
         src/main/8-string-to-integer-atoi/8.h
+        src/main/9-palindrome-number/9.h
         )
 
 set(SOURCE_FILES
@@ -36,6 +37,7 @@ set(SOURCE_FILES
         src/main/6-zigzag-conversion/6.c
         src/main/7-reverse-integer/7.c
         src/main/8-string-to-integer-atoi/8.c
+        src/main/9-palindrome-number/9.c
         )
 
 add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
@@ -52,6 +54,7 @@ if (UNITTEST_FOUND)
             src/main/6-zigzag-conversion/6_test.c
             src/main/7-reverse-integer/7_test.c
             src/main/8-string-to-integer-atoi/8_test.c
+            src/main/9-palindrome-number/9_test.c
             )
 
     #打开cmake测试编译

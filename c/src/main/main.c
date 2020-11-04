@@ -1,7 +1,7 @@
-#include <limits.h>
 #include <stdio.h>
-#include "8-string-to-integer-atoi/8.h"
+#include <limits.h>
+#include "9-palindrome-number/9.h"
 
 int main(int args, char **arv) {
-    printf("%d#####\n", myAtoi("  -0012a42"));
+    printf("%d#####\n", isPalindrome(INT_MAX));
 }
