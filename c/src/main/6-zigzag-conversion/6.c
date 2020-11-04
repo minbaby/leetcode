@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include "6.h"
 
+// 思路：
+// 1. 先从上往下，x轴不变，y轴-1
+// 2. 当 y轴到达 numRows 时，方向变为从下往上
+// 3. 从下往上，x轴+1, y轴+1
+// 4. 当 y轴到达 0 时，方向自上往下
+// 5. 重复1-4步骤直到结束
 char *convert(char *s, int numRows) {
     int len = (int) strlen(s);
 
@@ -11,10 +17,7 @@ char *convert(char *s, int numRows) {
     memset(ret, '\0', retLen);
 
     if (len <= 2 || numRows == 1 || len < numRows) {
-        for (int i = 0; i < len; ++i) {
-            ret[i] = s[i];
-        }
-
+        strcpy(ret, s);
         return ret;
     }
 
@@ -52,4 +55,32 @@ char *convert(char *s, int numRows) {
     }
 
     return ret;
+}
+
+// 思路2
+// 计算出第k个值，属于第几行，之间append进去，然后把各行按照顺序拼接即可
+// 周期 n = 2 * rowNums - 2
+// 取模 m = k % n
+// row = min(m, n-m) += s[k]
+
+// 思路3
+// 横扫，直接计算坐标
+// 1. 这是一个循环计算， 周期 n = 2*rowNums -2
+
+char * convert2(char * s, int numRows){
+    int n = (int) strlen(s);
+    if (numRows == 1) return s;
+    char* res = (char*)malloc(sizeof(char) * (n + 1));
+    int k = 0;
+    for (int i = 0; i < numRows; i++) {
+        for (int j = 0; j < n; j++) {
+            if (j % (2 * numRows - 2) == i ||
+                j % (2 * numRows - 2) == 2 * numRows - 2 - i) {
+                res[k] = s[j];
+                k++;
+            }
+        }
+    }
+    res[k] = '\0';
+    return res;
 }
