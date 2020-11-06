@@ -15,4 +15,7 @@ struct ListNode *utils_list_create(const int *list, int num);
 bool utils_list_cmp(struct ListNode *l1, struct ListNode *l2);
 
 void utils_print_array(char *str);
+
+void utils_list_free(struct ListNode *list);
+
 #endif //LEET_CODE_UTILS_H
