@@ -1,5 +1,10 @@
 # leet code use c
 
+# hash
+
+```bash
+sudo apt install uthash-dev
+```
 
 ## unit test
 
