@@ -28,6 +28,7 @@ set(HEADER_FILES
         src/main/10-regular-expression-matching/10.h
         src/main/11-container-with-most-water/11.h
         src/main/12-integer-to-roman/12.h
+        src/main/13-roman-to-integer/13.h
         )
 
 set(SOURCE_FILES
@@ -44,6 +45,7 @@ set(SOURCE_FILES
         src/main/10-regular-expression-matching/10.c
         src/main/11-container-with-most-water/11.c
         src/main/12-integer-to-roman/12.c
+        src/main/13-roman-to-integer/13.c
         )
 
 add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
@@ -64,6 +66,7 @@ if (UNITTEST_FOUND)
             src/main/10-regular-expression-matching/10_test.c
             src/main/11-container-with-most-water/11_test.c
             src/main/12-integer-to-roman/12_test.c
+            src/main/13-roman-to-integer/13_test.c
             )
 
     #打开cmake测试编译
