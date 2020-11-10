@@ -1,10 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "13-roman-to-integer/13.h"
+#include "14-longest-common-prefix/14.h"
 
 int main(int args, char **arv) {
 
-    int x = romanToInt("DCXXI");
+    char* strs[3] = {
+        "flower",
+        "flow",
+        "flight"
+    };
 
-    printf("%d\n", x);
+    char* x = longestCommonPrefix(strs, 3);
+
+    printf("%s \n", x);
 }

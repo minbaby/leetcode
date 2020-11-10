@@ -1,5 +1,4 @@
 test:
-	mkdir -p build && cd build && cmake ../ && make && ./runtest
-
+	cmake -Bbuild -GNinja && ninja -C build && ./build/runtest
 main:
-	mkdir -p build && cd build && cmake ../ && make && ./runmain
+	cmake -Bbuild -GNinja && ninja -C build && ./build/runmain
