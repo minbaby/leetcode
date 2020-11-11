@@ -1,7 +1,7 @@
 #include "14.h"
 #include <criterion/criterion.h>
 
-Test(A, a001)
+Test(longestCommonPrefix, a001)
 {
     char *strs[3] = {
         "flower",
@@ -16,7 +16,7 @@ Test(A, a001)
     free(x);
 }
 
-Test(A, a002)
+Test(longestCommonPrefix, a002)
 {
     char *strs[3] = {
         "dog",
@@ -31,7 +31,7 @@ Test(A, a002)
     free(x);
 }
 
-Test(A, a003)
+Test(longestCommonPrefix, a003)
 {
     char *strs[0] = {};
     char *expected = "";

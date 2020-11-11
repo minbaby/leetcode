@@ -30,6 +30,8 @@ set(HEADER_FILES
         src/main/12-integer-to-roman/12.h
         src/main/13-roman-to-integer/13.h
         src/main/14-longest-common-prefix/14.h
+        src/main/15-3sum/15.h
+        src/main/31-next-permutation/31.h
         )
 
 set(SOURCE_FILES
@@ -48,6 +50,8 @@ set(SOURCE_FILES
         src/main/12-integer-to-roman/12.c
         src/main/13-roman-to-integer/13.c
         src/main/14-longest-common-prefix/14.c
+        src/main/15-3sum/15.c
+        src/main/31-next-permutation/31.c
         )
 
 add_executable(runmain  ${HEADER_FILES} ${SOURCE_FILES} src/main/main.c)
@@ -70,6 +74,8 @@ if (UNITTEST_FOUND)
             src/main/12-integer-to-roman/12_test.c
             src/main/13-roman-to-integer/13_test.c
             src/main/14-longest-common-prefix/14_test.c
+            src/main/15-3sum/15_test.c
+            src/main/31-next-permutation/31_test.c
             )
 
     #打开cmake测试编译

@@ -12,8 +12,8 @@ Test(TwoSum, a001) {
 
     int *act = twoSum(nums, numsSize, target, &returnSize);
 
-    cr_assert_arr_eq(act, expected, 2, "error");
-    cr_assert_eq(expectedSize, returnSize, "num error");
+    cr_assert_arr_eq(act, expected, 2);
+    cr_assert_eq(expectedSize, returnSize);
 
     free(act);
 }
@@ -29,8 +29,8 @@ Test(TwoSum, a002) {
 
     int *act = twoSum(nums, numsSize, target, &returnSize);
 
-    cr_assert_arr_eq(act, expected, 2, "value error");
-    cr_assert_eq(expectedSize, returnSize, "num error");
+    cr_assert_arr_eq(act, expected, 2);
+    cr_assert_eq(expectedSize, returnSize);
 
     free(act);
 }

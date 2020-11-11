@@ -1,16 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "14-longest-common-prefix/14.h"
+#include "15-3sum/15.h"
 
 int main(int args, char **arv) {
+    int nums[6] = {-1, 0, 1, 2, -1, -4};
 
-    char* strs[3] = {
-        "flower",
-        "flow",
-        "flight"
-    };
+    int *returnSize = (int *) malloc(sizeof(int *));
+    *returnSize = -1;
 
-    char* x = longestCommonPrefix(strs, 3);
+    int *returnColumnSizes[1] = {};
 
-    printf("%s \n", x);
+
+    int **x = threeSum(nums, 6, returnSize, returnColumnSizes);
+
+    for (int i = 0; i < 2; ++i) {
+        printf("%d===", (*(x+i))[0]);
+        printf("%d===", (*(x+i))[1]);
+        printf("%d===\n", (*(x+i))[2]);
+    }
+
+    free(*returnColumnSizes);
+
+    for (int i = 0; i < *returnSize; ++i) {
+        free(x[i]);
+    }
+    free(x);
+    free(returnSize);
 }
