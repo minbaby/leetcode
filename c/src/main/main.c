@@ -1,29 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "15-3sum/15.h"
+#include "16-3sum-closest/16.h"
 
 int main(int args, char **arv) {
-    int nums[6] = {-1, 0, 1, 2, -1, -4};
+    int nums[4] = {0, 2, 1, -3};
+    int numsSize = 4;
+    int target = 1;
 
-    int *returnSize = (int *) malloc(sizeof(int *));
-    *returnSize = -1;
-
-    int *returnColumnSizes[1] = {};
-
-
-    int **x = threeSum(nums, 6, returnSize, returnColumnSizes);
-
-    for (int i = 0; i < 2; ++i) {
-        printf("%d===", (*(x+i))[0]);
-        printf("%d===", (*(x+i))[1]);
-        printf("%d===\n", (*(x+i))[2]);
-    }
-
-    free(*returnColumnSizes);
-
-    for (int i = 0; i < *returnSize; ++i) {
-        free(x[i]);
-    }
-    free(x);
-    free(returnSize);
+    int ret = threeSumClosest(nums, numsSize, target);
+    printf("%d---", ret);
 }

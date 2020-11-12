@@ -31,6 +31,7 @@ set(HEADER_FILES
         src/main/13-roman-to-integer/13.h
         src/main/14-longest-common-prefix/14.h
         src/main/15-3sum/15.h
+        src/main/16-3sum-closest/16.h
         src/main/31-next-permutation/31.h
         )
 
@@ -51,6 +52,7 @@ set(SOURCE_FILES
         src/main/13-roman-to-integer/13.c
         src/main/14-longest-common-prefix/14.c
         src/main/15-3sum/15.c
+        src/main/16-3sum-closest/16.c
         src/main/31-next-permutation/31.c
         )
 
@@ -75,6 +77,7 @@ if (UNITTEST_FOUND)
             src/main/13-roman-to-integer/13_test.c
             src/main/14-longest-common-prefix/14_test.c
             src/main/15-3sum/15_test.c
+            src/main/16-3sum-closest/16_test.c
             src/main/31-next-permutation/31_test.c
             )
 
