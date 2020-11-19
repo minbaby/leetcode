@@ -1,12 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "16-3sum-closest/16.h"
+#include "19-remove-nth-node-from-end-of-list/19.h"
 
 int main(int args, char **arv) {
-    int nums[4] = {0, 2, 1, -3};
-    int numsSize = 4;
-    int target = 1;
+    int list[] = {1,2};
+    struct ListNode *h1 = utils_list_create(list, 2);
 
-    int ret = threeSumClosest(nums, numsSize, target);
-    printf("%d---", ret);
+    int listExpected[] = {1};
+    struct ListNode *expected = utils_list_create(listExpected, 1);
+
+    struct ListNode *ret = removeNthFromEnd(h1, 1);
+
+    (utils_list_cmp(expected, ret));
+
+//    utils_list_free(ret);
+    utils_list_free(expected);
+    utils_list_free(h1);
 }

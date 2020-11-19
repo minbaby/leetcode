@@ -32,6 +32,9 @@ set(HEADER_FILES
         src/main/14-longest-common-prefix/14.h
         src/main/15-3sum/15.h
         src/main/16-3sum-closest/16.h
+        src/main/17-letter-combinations-of-a-phone-number/17.h
+        src/main/18-4sum/18.h
+        src/main/19-remove-nth-node-from-end-of-list/19.h
         src/main/31-next-permutation/31.h
         )
 
@@ -53,6 +56,9 @@ set(SOURCE_FILES
         src/main/14-longest-common-prefix/14.c
         src/main/15-3sum/15.c
         src/main/16-3sum-closest/16.c
+        src/main/17-letter-combinations-of-a-phone-number/17.c
+        src/main/18-4sum/18.c
+        src/main/19-remove-nth-node-from-end-of-list/19.c
         src/main/31-next-permutation/31.c
         )
 
@@ -78,6 +84,9 @@ if (UNITTEST_FOUND)
             src/main/14-longest-common-prefix/14_test.c
             src/main/15-3sum/15_test.c
             src/main/16-3sum-closest/16_test.c
+            src/main/17-letter-combinations-of-a-phone-number/17_test.c
+            src/main/18-4sum/18_test.c
+            src/main/19-remove-nth-node-from-end-of-list/19_test.c
             src/main/31-next-permutation/31_test.c
             )
 
