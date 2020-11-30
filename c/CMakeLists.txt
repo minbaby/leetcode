@@ -35,6 +35,7 @@ set(HEADER_FILES
         src/main/17-letter-combinations-of-a-phone-number/17.h
         src/main/18-4sum/18.h
         src/main/19-remove-nth-node-from-end-of-list/19.h
+        src/main/20-valid-parentheses/20.h
         src/main/31-next-permutation/31.h
         )
 
@@ -59,6 +60,7 @@ set(SOURCE_FILES
         src/main/17-letter-combinations-of-a-phone-number/17.c
         src/main/18-4sum/18.c
         src/main/19-remove-nth-node-from-end-of-list/19.c
+        src/main/20-valid-parentheses/20.c
         src/main/31-next-permutation/31.c
         )
 
@@ -87,6 +89,7 @@ if (UNITTEST_FOUND)
             src/main/17-letter-combinations-of-a-phone-number/17_test.c
             src/main/18-4sum/18_test.c
             src/main/19-remove-nth-node-from-end-of-list/19_test.c
+            src/main/20-valid-parentheses/20_test.c
             src/main/31-next-permutation/31_test.c
             )
 
