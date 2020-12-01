@@ -31,7 +31,16 @@ bool isValid2(char *s) {
         }
     }
 
-    return STACK_EMPTY(stack);
+    bool empty = STACK_EMPTY(stack);
+    if (!empty) {
+        el *tmp = NULL;
+        while (!STACK_EMPTY(stack)) {
+            STACK_POP(stack, tmp);
+            free(tmp);
+        }
+    }
+
+    return empty;
 }
 
 bool isValid(char *s) {
