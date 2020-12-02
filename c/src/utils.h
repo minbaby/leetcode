@@ -10,6 +10,8 @@ struct ListNode {
 
 void UPrintList(struct ListNode *list);
 
+void utils_list_print(struct ListNode *list);
+
 struct ListNode *utils_list_create(const int *list, int num);
 
 bool utils_list_cmp(struct ListNode *l1, struct ListNode *l2);

@@ -10,7 +10,7 @@ int map[] = {
         1, 2, 4, 8, 16, 32,
 };
 
-void backtrace(char **res, int num, int *returnSize, int start, int hour, int min) {
+static void backtrace(char **res, int num, int *returnSize, int start, int hour, int min) {
     if (num == 0) {
         if (hour > 11 || min > 59) {
             return;

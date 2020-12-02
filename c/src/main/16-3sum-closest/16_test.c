@@ -10,19 +10,19 @@ Test(threeSumClosest, a001) {
 
     int ret = threeSumClosest(nums, numsSize, target);
 
-    cr_assert_eq(ret, expected);
+    cr_assert_eq(ret, expected, "ret:%d expected:%d", ret, expected);
 }
 
 Test(threeSumClosest, a002) {
     int nums[0] = {};
-    int numsSize = 4;
+    int numsSize = 0;
     int target = 1;
 
     int expected = 0;
 
     int ret = threeSumClosest(nums, numsSize, target);
 
-    cr_assert_eq(ret, expected);
+    cr_assert_eq(ret, expected, "ret:%d expected:%d", ret, expected);
 }
 
 Test(threeSumClosest, a003) {
@@ -34,7 +34,7 @@ Test(threeSumClosest, a003) {
 
     int ret = threeSumClosest(nums, numsSize, target);
 
-    cr_assert_eq(ret, expected);
+    cr_assert_eq(ret, expected, "ret:%d expected:%d", ret, expected);
 }
 
 Test(threeSumClosest, a004) {
@@ -46,5 +46,5 @@ Test(threeSumClosest, a004) {
 
     int ret = threeSumClosest(nums, numsSize, target);
 
-    cr_assert_eq(ret, expected);
+    cr_assert_eq(ret, expected, "ret:%d expected:%d", ret, expected);
 }

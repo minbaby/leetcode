@@ -38,6 +38,7 @@ set(HEADER_FILES
         src/main/20-valid-parentheses/20.h
         src/main/21-merge-two-sorted-lists/21.h
         src/main/22-generate-parentheses/22.h
+        src/main/24-swap-nodes-in-pairs/24.h
         src/main/31-next-permutation/31.h
         src/main/400-binary-watch/400.h
         )
@@ -66,6 +67,7 @@ set(SOURCE_FILES
         src/main/20-valid-parentheses/20.c
         src/main/21-merge-two-sorted-lists/21.c
         src/main/22-generate-parentheses/22.c
+        src/main/24-swap-nodes-in-pairs/24.c
         src/main/31-next-permutation/31.c
         src/main/400-binary-watch/400.c
         )
@@ -98,6 +100,7 @@ if (UNITTEST_FOUND)
             src/main/20-valid-parentheses/20_test.c
             src/main/21-merge-two-sorted-lists/21_test.c
             src/main/22-generate-parentheses/22_test.c
+            src/main/24-swap-nodes-in-pairs/24_test.c
             src/main/31-next-permutation/31_test.c
             src/main/400-binary-watch/400_test.c
             )
