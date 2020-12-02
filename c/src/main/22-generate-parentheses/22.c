@@ -38,7 +38,7 @@ static void backtrace(
 char **generateParenthesis(int n, int *returnSize) {
     *returnSize = 0;
 
-    char **result = (char **) malloc(sizeof(char) * MAX_SIZE);
+    char **result = (char **) malloc(sizeof(char) * MAX_SIZE * n);
     memset(result, '\0', sizeof(char) * MAX_SIZE);
 
     char *str = (char *) malloc(sizeof(char) * (2 * n + 1));

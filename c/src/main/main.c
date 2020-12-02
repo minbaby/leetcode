@@ -1,16 +1,23 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "16-3sum-closest/16.h"
+#include "22-generate-parentheses/22.h"
 
 int main(int args, char **arv) {
-    int nums[0] = {};
-    int numsSize = 1;
-    int target = 1;
+    int n = 7;
+    int returnSize = 0;
+    char **ret = generateParenthesis(n, &returnSize);
 
-    int expected = 0;
+    char *expected[] = {
+            "((()))",
+            "(()())",
+            "(())()",
+            "()(())",
+            "()()()"
+    };
 
-    int ret = threeSumClosest(nums, numsSize, target);
+    for (int i = 0; i < returnSize; ++i) {
+        printf("%s---", ret[i]);
+    }
 
-    printf("%d", ret);
 }
 
