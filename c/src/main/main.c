@@ -1,11 +1,12 @@
-#include "26-remove-duplicates-from-sorted-array/26.h"
+#include "27-remove-element/27.h"
 #include <stdlib.h>
 #include <stdio.h>
 
 int main(int args, char **arv) {
-    int nums[] = {};
-    int num = 0;
-    int x = removeDuplicates2(nums, num);
+    int nums[] = {0,1,2,2,3,0,4,2};
+    int num = 8;
+    int num2 = 2;
+    int x = removeElement(nums, num, num2);
     printf("%d", x);
 }
 
