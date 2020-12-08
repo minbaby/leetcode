@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
 #ifndef LEET_CODE_{num}_H
 #define LEET_CODE_{num}_H
 

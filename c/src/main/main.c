@@ -1,14 +1,11 @@
-#include "../utils.h"
-#include "25-reverse-nodes-in-k-group/25.h"
+#include "26-remove-duplicates-from-sorted-array/26.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int main(int args, char **arv) {
-    int d1[] = {1, 2, 3, 4, 5};
-    struct ListNode *l1 = utils_list_create(d1, 5);
-
-    struct ListNode *ret = reverseKGroup(l1, 2);
-
-    utils_list_print(ret);
-    utils_list_free(ret);
+    int nums[] = {};
+    int num = 0;
+    int x = removeDuplicates2(nums, num);
+    printf("%d", x);
 }
 

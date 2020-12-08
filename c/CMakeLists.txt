@@ -41,6 +41,7 @@ set(HEADER_FILES
         src/main/23-merge-k-sorted-lists/23.h
         src/main/24-swap-nodes-in-pairs/24.h
         src/main/25-reverse-nodes-in-k-group/25.h
+        src/main/26-remove-duplicates-from-sorted-array/26.h
         src/main/31-next-permutation/31.h
         src/main/400-binary-watch/400.h
         )
@@ -72,6 +73,7 @@ set(SOURCE_FILES
         src/main/23-merge-k-sorted-lists/23.c
         src/main/24-swap-nodes-in-pairs/24.c
         src/main/25-reverse-nodes-in-k-group/25.c
+        src/main/26-remove-duplicates-from-sorted-array/26.c
         src/main/31-next-permutation/31.c
         src/main/400-binary-watch/400.c
         )
@@ -107,6 +109,7 @@ if (UNITTEST_FOUND)
             src/main/23-merge-k-sorted-lists/23_test.c
             src/main/24-swap-nodes-in-pairs/24_test.c
             src/main/25-reverse-nodes-in-k-group/25_test.c
+            src/main/26-remove-duplicates-from-sorted-array/26_test.c
             src/main/31-next-permutation/31_test.c
             src/main/400-binary-watch/400_test.c
             )
