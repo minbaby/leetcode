@@ -1,12 +1,39 @@
-#include "27-remove-element/27.h"
+#include "28-implement-strstr/28.h"
 #include <stdlib.h>
 #include <stdio.h>
 
 int main(int args, char **arv) {
-    int nums[] = {0,1,2,2,3,0,4,2};
-    int num = 8;
-    int num2 = 2;
-    int x = removeElement(nums, num, num2);
-    printf("%d", x);
+    char *ha[] = {
+//            "hello",
+//            "aaaaa",
+//            "ababab",
+//            "aaa",
+//            "mississippi",
+//            "mississippi",
+            "aaaa",
+
+    };
+
+    char *ne[] = {
+//            "ll",
+//            "bba",
+//            "",
+//            "aaaa",
+//            "issip",
+//            "issipi",
+            "baaa",
+    };
+
+    int n =
+            1
+//            7
+            ;
+
+    for (int i = 0; i < n; ++i) {
+        int x = strStr(ha[i], ne[i]);
+        printf("[%d]@@ %d @@ \n", i, x);
+    }
+
+    printf("end");
 }
 
