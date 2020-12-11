@@ -37,7 +37,9 @@ Test(strStr, a001) {
 
     for (int i = 0; i < n; ++i) {
         int x = strStr(ha[i], ne[i]);
-        cr_assert_eq(x, expected[i], "[%d] %d != %d", i, x, expected[i]);
-    }
+        cr_assert_eq(x, expected[i], "1.[%d] %d != %d", i, x, expected[i]);
 
+        int y = strStr2(ha[i], ne[i]);
+        cr_assert_eq(y, expected[i], "2.[%d] %d != %d", i, y, expected[i]);
+    }
 }
