@@ -5,6 +5,8 @@ project(leet-code VERSION 0.0.1)
 set(CMAKE_BUILD_TYPE Debug)
 #set(CMAKE_CXX_STANDARD 11)
 
+include_directories(thirdparty/uthash/include)
+
 #引入pkg-config
 find_package(PkgConfig)
 

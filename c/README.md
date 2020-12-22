@@ -9,6 +9,7 @@ sudo apt install uthash-dev
 ## unit test
 
 ```bash
+#ubuntu
 # https://github.com/Snaipe/Criterion
 mkdir -p $HOME/code/repos
 git clone https://github.com/Snaipe/Criterion.git $HOME/code/repos
@@ -17,7 +18,7 @@ sudo apt install -y build-essential \
     nanopb \
     libgrpc++-dev \
     libgit2-dev \
-    libffi-dev \
+    libffi-dev \;
     libboxfort-dev \
     libnanomsg-dev \
     libboxfort-dev \
@@ -28,8 +29,10 @@ sudo ninja -C build install
 
 sudo ldconf
 ```
-
-
+```bash
+brew install snaipe/soft/criterion
+```
+brew tap nwoolls/xgminer
 ## build
 
 ```
