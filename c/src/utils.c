@@ -42,7 +42,7 @@ struct ListNode *utils_list_create(const int *list, int num) {
         p = n;
     }
 
-    struct ListNode *ret =  head->next;
+    struct ListNode *ret = head->next;
     free(head);
     return ret;
 }
