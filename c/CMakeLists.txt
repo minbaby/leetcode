@@ -48,6 +48,7 @@ set(HEADER_FILES
         src/main/28-implement-strstr/28.h
         src/main/29-divide-two-integers/29.h
         src/main/31-next-permutation/31.h
+        src/main/147-insertion-sort-list/147.h
         src/main/400-binary-watch/400.h
         src/main/832-flipping-an-image/832.h
         )
@@ -84,6 +85,7 @@ set(SOURCE_FILES
         src/main/28-implement-strstr/28.c
         src/main/29-divide-two-integers/29.c
         src/main/31-next-permutation/31.c
+        src/main/147-insertion-sort-list/147.c
         src/main/400-binary-watch/400.c
         src/main/832-flipping-an-image/832.c
         )
@@ -124,6 +126,7 @@ if (UNITTEST_FOUND)
             src/main/28-implement-strstr/28_test.c
             src/main/29-divide-two-integers/29_test.c
             src/main/31-next-permutation/31_test.c
+            src/main/147-insertion-sort-list/147_test.c
             src/main/400-binary-watch/400_test.c
             src/main/832-flipping-an-image/832_test.c
             )
