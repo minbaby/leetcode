@@ -33,12 +33,25 @@ sudo ldconf
 brew install snaipe/soft/criterion
 ```
 brew tap nwoolls/xgminer
+
 ## build
 
 ```
-cd build && cmake ../ && cd ../
+1. make or make test # 执行测试
+2. make one # 过滤执行
+3. make main # 执行 main.c
 ```
 
+
+
+
+
+
+## leetcode.php
+
+```bash
+./leetcode.php num={num} url={url} # 自动生成对应文件
+```
 
 ## links 
 

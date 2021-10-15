@@ -21,8 +21,6 @@ void utils_print_array(char *str);
 void utils_list_free(struct ListNode *list);
 
 
-
-
 // -======= 使用数组生成malloc的指针
 #define ARRAY_CREATE(A, row, col, data)     \
     A = malloc(sizeof(int) * row * col);     \

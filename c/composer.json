@@ -1,0 +1,20 @@
+{
+    "name": "minbaby/c",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Minbaby\\C\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "霸气千秋",
+            "email": "zhangshaomin_1990@126.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^5.3",
+        "inhere/console": "^4.0"
+    }
+}

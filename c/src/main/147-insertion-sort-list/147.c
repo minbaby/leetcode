@@ -10,7 +10,7 @@ struct ListNode *insertionSortList(struct ListNode *head) {
         return head;
     }
 
-    struct ListNode *guard = malloc(sizeof(struct ListNode));
+    struct ListNode *guard = (struct ListNode *) malloc(sizeof(struct ListNode));
     guard->next = head;
 
     // 维护已排序部分的最后一个节点，默认给head，即第一个元素当作有序链表
