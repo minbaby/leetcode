@@ -1,17 +1,24 @@
-#include "148-sort-list/148.h"
+#include "149-max-points-on-a-line/149.h"
 #include "../utils.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int args, char **arv) {
-    // [4]     [19]    [14]    [5]     [-3]    [1]     [8]     [5]     [11]    [15]
-    int list01[] = {4,19,14,5,-3,1,8,5,11,15};
-    struct ListNode* n = utils_list_create(list01, 10);
+#define inputSize(x) x
+#define inputColSize(x) x
 
-    // utils_list_print(n);
-    struct ListNode *ret = sortList(n);
-    utils_list_print(ret);
+int main(int args, char **arv)
+{
+    int **input;
+    int d[inputSize(3)][inputColSize(2)] = {
+            {4, 5},
+            {4, -1},
+            {4, 0}
+    };
+    int excepted = 3;
+
+    ARRAY_CREATE(input, inputSize(3), inputColSize(2), d);
+
+    int pointsColSize = 2;
+
+    printf("ret: %d", maxPoints(input, 3, &pointsColSize));
 }
-
-
-

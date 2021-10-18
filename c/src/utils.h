@@ -3,7 +3,8 @@
 
 #include <stdbool.h>
 
-struct ListNode {
+struct ListNode
+{
     int val;
     struct ListNode *next;
 };
@@ -20,16 +21,17 @@ void utils_print_array(char *str);
 
 void utils_list_free(struct ListNode *list);
 
-
-// -======= 使用数组生成malloc的指针
-#define ARRAY_CREATE(A, row, col, data)     \
-    A = malloc(sizeof(int) * row * col);     \
-    for (int i=0; i<row; i++) {             \
-        int *t = malloc(sizeof(int) * col); \
-        for (int j=0;j<col;j++) {           \
-            *(t+j) = data[i][j] ;           \
-        }                                   \
-        *(A+i) = t       ;                   \
+// ======= 使用数组生成malloc的指针
+#define ARRAY_CREATE(A, row, col, data)            \
+    A = (int **)malloc(sizeof(int) * row * col);   \
+    for (int i = 0; i < row; i++)                  \
+    {                                              \
+        int *t = (int *)malloc(sizeof(int) * col); \
+        for (int j = 0; j < col; j++)              \
+        {                                          \
+            *(t + j) = data[i][j];                 \
+        }                                          \
+        *(A + i) = t;                              \
     }
 
 #endif //LEET_CODE_UTILS_H
