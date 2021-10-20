@@ -9,6 +9,17 @@
         "unordered_map": "c",
         "unordered_set": "c",
         "complex": "c",
-        "new": "c"
+        "new": "c",
+        "__config": "cpp",
+        "149.h": "c",
+        "uthash.h": "c",
+        "__locale": "c",
+        "locale": "c",
+        "__bit_reference": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "hash_map": "c",
+        "math.h": "c",
+        "__tree": "c"
     }
 }

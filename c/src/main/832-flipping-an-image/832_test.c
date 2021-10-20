@@ -22,8 +22,8 @@ Test(flipAndInvertImage, a001) {
             {1, 1, 1}
     };
 
-    int *returnSize = malloc(sizeof(int) * 10);
-    int **returnColumnSizes = malloc(sizeof(int) * 100);;
+    int *returnSize = (int*) malloc(sizeof(int) * 10);
+    int **returnColumnSizes = (int **) malloc(sizeof(int) * 100);;
 
     int tmp = inputColSize(3);
     int **returnData = flipAndInvertImage(input, inputSize(3), &tmp, returnSize, returnColumnSizes);

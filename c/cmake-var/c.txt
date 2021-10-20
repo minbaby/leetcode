@@ -33,3 +33,4 @@ src/main/147-insertion-sort-list/147.c
 src/main/148-sort-list/148.c
 src/main/400-binary-watch/400.c
 src/main/832-flipping-an-image/832.c
+src/main/149-max-points-on-a-line/149.c
