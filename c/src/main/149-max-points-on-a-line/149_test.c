@@ -7,8 +7,6 @@
 
 Test(t_149_max_points_on_a_line, a001) {
     // "[[0,0]]";
-
-
     int **input;
     int d[inputSize(1)][inputColSize(2)] = {
             {0, 0},
@@ -34,7 +32,7 @@ Test(t_149_max_points_on_a_line, a002) {
             {2, 1},
             {2, 2}
     };
-    int excepted = 1;
+    int excepted = 3;
 
     ARRAY_CREATE(input, inputSize(5), inputColSize(2), d);
 

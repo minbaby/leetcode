@@ -1,24 +1,13 @@
-#include "149-max-points-on-a-line/149.h"
-#include "../utils.h"
-#include <stdlib.h>
+#include "150-evaluate-reverse-polish-notation/150.h"
 #include <stdio.h>
 
 #define inputSize(x) x
 #define inputColSize(x) x
 
-int main(int args, char **arv)
-{
-    int **input;
-    int d[inputSize(3)][inputColSize(2)] = {
-            {4, 5},
-            {4, -1},
-            {4, 0}
-    };
-    int excepted = 3;
+int main(int args, char **arv) {
+    char *input[] = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
+    int excepted = 22;
+    int tokenSize = 13;
 
-    ARRAY_CREATE(input, inputSize(3), inputColSize(2), d);
-
-    int pointsColSize = 2;
-
-    printf("ret: %d", maxPoints(input, 3, &pointsColSize));
+    printf("ret: %d", evalRPN(input, tokenSize));
 }
