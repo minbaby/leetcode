@@ -36,8 +36,12 @@ class CreateCommand extends Command
      */
     public function execute($input, $output)
     {
-        $num = $input->getArg('num');
-        $url = $input->getArg('url');
+        $num = $output->ask("num");
+        $url = $output->ask("url");
+
+        if (empty($num) || empty($url)) {
+            $output->error("num or url 不能为空", true);
+        } 
 
         $url = parse_url($url, PHP_URL_PATH);
         $arr = array_values(array_filter(explode('/', $url)));
