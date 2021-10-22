@@ -12,6 +12,9 @@ Test(t_148_sortList, a001) {
     struct ListNode* expectedList = utils_list_create(actual, 4);
 
     cr_assert(utils_list_cmp(expectedList, actualList));
+
+    utils_list_free(actualList);
+    utils_list_free(expectedList);
 }
 
 Test(t_148_sortList, a002) {
@@ -24,6 +27,9 @@ Test(t_148_sortList, a002) {
     struct ListNode* expectedList = utils_list_create(actual, 5);
 
     cr_assert(utils_list_cmp(expectedList, actualList));
+
+    utils_list_free(actualList);
+    utils_list_free(expectedList);
 }
 
 Test(t_148_sortList, a003) {
@@ -36,4 +42,7 @@ Test(t_148_sortList, a003) {
     struct ListNode* expectedList = utils_list_create(actual, 10);
 
     cr_assert(utils_list_cmp(expectedList, actualList));
+
+    utils_list_free(actualList);
+    utils_list_free(expectedList);
 }

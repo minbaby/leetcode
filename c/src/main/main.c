@@ -1,11 +1,12 @@
-#include "151-reverse-words-in-a-string/151.h"
 #include <stdio.h>
-
+#include "../utils.h"
+#include "152-maximum-product-subarray/152.h"
 
 int main(int args, char **arv) {
-    char *input = "a";
-    char *expected = "";
+    int nums[] = {-2, 3, -4};
+    int numSize = sizeof(nums) / sizeof(nums[0]);
 
-    char * x = reverseWords(input);
-    printf("ret: [%s]", x);
+    int n = maxProduct2(nums, numSize);
+
+    printf("%d=", n);
 }

@@ -1,6 +1,7 @@
 # leetcode
 
-[![Build Status](https://drone.minbaby.cc:5000/api/badges/minbaby/leetcode/status.svg)](https://drone.minbaby.cc:5000/minbaby/leetcode)
+C
+![C && Github Actions](https://github.com/minbaby/leetcode/actions/workflows/cmake.yml/badge.svg)
 
 ## tips
 

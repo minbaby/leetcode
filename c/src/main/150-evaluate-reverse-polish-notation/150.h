@@ -6,7 +6,7 @@
 #ifndef LEET_CODE_150_H
 #define LEET_CODE_150_H
 
-//@see /problems/evaluate-reverse-polish-notation/
+//@see https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
 int evalRPN(char **tokens, int tokensSize);
 
 #endif // LEET_CODE_150_H

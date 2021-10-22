@@ -41,10 +41,10 @@ class CreateCommand extends Command
 
         if (empty($num) || empty($url)) {
             $output->error("num or url 不能为空", true);
-        } 
+        }
 
-        $url = parse_url($url, PHP_URL_PATH);
-        $arr = array_values(array_filter(explode('/', $url)));
+        $_url = parse_url($url, PHP_URL_PATH);
+        $arr = array_values(array_filter(explode('/', $_url)));
         $itemName = $arr[1];
 
         $dir = "src/main/{$num}-{$itemName}";
@@ -53,15 +53,15 @@ class CreateCommand extends Command
 
         foreach (glob(__DIR__ . '/stubs/*') as $value) {
             $content = file_get_contents($value);
-            
+
             $content = str_replace('{num}', $num, $content);
             $content = str_replace('{url}', $url, $content);
             $content = str_replace('{task}', str_replace('-', '_', $itemName), $content);
-            
+
             $name = pathinfo($value, PATHINFO_BASENAME);
-            
+
             $name = str_replace('{num}', $num, $name);
-            
+
             $file = __DIR__ . "/$dir/$name";
             file_put_contents($file, $content);
             $output->info("generate {$file}");
@@ -75,8 +75,17 @@ class CreateCommand extends Command
 
         foreach($f as $k => $v) {
             file_put_contents($k, "\n" . $v, FILE_APPEND);
-
         }
+
+        # trigger CMakeLists.txt
+        $content = file_get_contents("CMakeLists.txt");
+        $matchAll = [];
+        $regex = '/(message\("trigger\sat\s#)(.+)(#"\))/';
+        preg_match_all($regex, $content, $matchAll);
+
+        $now = date("Y/m/d H:i:s");
+        $content = preg_replace($regex, "$1{$now} $3", $content);
+        file_put_contents("CMakeLists.txt", $content);
     }
 }
 

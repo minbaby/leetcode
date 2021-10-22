@@ -34,6 +34,11 @@ int gcd2(int a, int b) {
     return a;
 }
 
+
+int _max(int a, int b) {
+    return a > b ? a : b;
+}
+
 // 核心还是斜率计算
 // @see https://leetcode-cn.com/problems/max-points-on-a-line/solution/zhi-xian-shang-zui-duo-de-dian-shu-by-le-tq8f/
 // 问题1，斜率是除出来的，所以一定是小数，但是计算机中的浮点数类型可能因为精度不够而无法足够精确地表示每一个斜率，（解决方案：使用二元组 (x,y)，表示分子和分母）
@@ -92,11 +97,11 @@ int maxPoints(int **points, int pointsSize, int *pointsColSize) {
         int maxN = 0;
         struct HashTable *iter, *tmp;
         HASH_ITER(hh, hashTable, iter, tmp) {
-            maxN = (int) fmax(maxN, iter->value + 1);
+            maxN =  _max(maxN, iter->value + 1);
             HASH_DEL(hashTable, iter);
             free(iter);
         }
-        ret = (int) fmax(ret, maxN);
+        ret =  _max(ret, maxN);
     }
 
     return ret;

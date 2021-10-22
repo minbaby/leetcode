@@ -1,5 +1,10 @@
 # leet code use c
 
+# warning
+
+`set (CMAKE_C_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")`
+在 macos 下，这个配置会导致执行时间从 1s 左右变为接近 30s，在 linux 下 不明显
+
 # hash
 
 ```bash
@@ -43,14 +48,10 @@ brew tap nwoolls/xgminer
 ```
 
 
-
-
-
-
 ## leetcode.php
 
 ```bash
-./leetcode.php num={num} url={url} # 自动生成对应文件
+./leetcode.php
 ```
 
 ## links 

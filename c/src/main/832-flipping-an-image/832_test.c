@@ -2,21 +2,18 @@
 #include "../../utils.h"
 #include <criterion/criterion.h>
 
-#define inputSize(x) x
-#define inputColSize(x) x
-
 Test(flipAndInvertImage, a001) {
 
     int **input;
-    int d[inputSize(3)][inputColSize(3)] = {
+    int d[3][3] = {
             {1, 1, 0},
             {1, 0, 1},
             {0, 0, 0},
     };
 
-    ARRAY_CREATE(input, inputSize(3), inputColSize(3), d);
+    ARRAY_CREATE(input, 3, 3, d);
 
-    int expected[inputColSize(3)][inputColSize(3)] = {
+    int expected[3][3] = {
             {1, 0, 0},
             {0, 1, 0},
             {1, 1, 1}
@@ -25,27 +22,30 @@ Test(flipAndInvertImage, a001) {
     int *returnSize = (int*) malloc(sizeof(int) * 10);
     int **returnColumnSizes = (int **) malloc(sizeof(int) * 100);;
 
-    int tmp = inputColSize(3);
-    int **returnData = flipAndInvertImage(input, inputSize(3), &tmp, returnSize, returnColumnSizes);
+    int tmp = 3;
+    int **returnData = flipAndInvertImage(input, 3, &tmp, returnSize, returnColumnSizes);
 
-    for (int i = 0; i < inputSize(3); ++i) {
-        for (int j = 0; j < inputColSize(3); ++j) {
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
             cr_assert_eq(returnData[i][j], expected[i][j], "ret:%d expected:%d", returnData[i][j], expected[i][j]);
         }
     }
+    ARRAY_FREE(input, 3);
+    free(returnSize);
+    free(returnColumnSizes);
 }
 Test(flipAndInvertImage, a002) {
     int **input;
-    int d[inputSize(4)][inputColSize(4)] = {
+    int d[4][4] = {
             {1, 1, 0, 0},
             {1, 0, 0, 1},
             {0, 1, 1, 1},
             {1, 0, 1, 0},
     };
 
-    ARRAY_CREATE(input, inputSize(4), inputColSize(4), d);
+    ARRAY_CREATE(input, 4, 4, d);
 
-    int expected[inputColSize(4)][inputColSize(4)] = {
+    int expected[4][4] = {
             {1, 1, 0, 0},
             {0, 1, 1, 0},
             {0, 0, 0, 1},
@@ -55,12 +55,15 @@ Test(flipAndInvertImage, a002) {
     int *returnSize = malloc(sizeof(int) * 10);
     int **returnColumnSizes = malloc(sizeof(int) * 100);;
 
-    int tmp = inputColSize(4);
-    int **returnData = flipAndInvertImage(input, inputSize(4), &tmp, returnSize, returnColumnSizes);
+    int tmp = 4;
+    int **returnData = flipAndInvertImage(input, 4, &tmp, returnSize, returnColumnSizes);
 
-    for (int i = 0; i < inputSize(4); ++i) {
-        for (int j = 0; j < inputColSize(4); ++j) {
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
             cr_assert_eq(returnData[i][j], expected[i][j], "ret:%d expected:%d", returnData[i][j], expected[i][j]);
         }
     }
+    ARRAY_FREE(input, 4);
+    free(returnSize);
+    free(returnColumnSizes);
 }

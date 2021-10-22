@@ -6,7 +6,7 @@
 #ifndef LEET_CODE_151_H
 #define LEET_CODE_151_H
 
-//@see /problems/reverse-words-in-a-string/
+//@see https://leetcode-cn.com/problems/reverse-words-in-a-string/
 char * reverseWords(char * s);
 
 #endif // LEET_CODE_151_H

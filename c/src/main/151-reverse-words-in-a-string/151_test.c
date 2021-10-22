@@ -7,6 +7,7 @@ Test(t_151_reverse_words_in_a_string, a001) {
 
     char *x = reverseWords(input);
     cr_assert_str_eq(x, expected);
+    free(x);
 }
 
 Test(t_151_reverse_words_in_a_string, a002) {
@@ -15,6 +16,7 @@ Test(t_151_reverse_words_in_a_string, a002) {
 
     char *x = reverseWords(input);
     cr_assert_str_eq(x, expected);
+    free(x);
 }
 
 Test(t_151_reverse_words_in_a_string, a003) {
@@ -23,6 +25,7 @@ Test(t_151_reverse_words_in_a_string, a003) {
 
     char *x = reverseWords(input);
     cr_assert_str_eq(x, expected);
+    free(x);
 }
 
 Test(t_151_reverse_words_in_a_string, a004) {
@@ -31,4 +34,5 @@ Test(t_151_reverse_words_in_a_string, a004) {
 
     char *x = reverseWords(input);
     cr_assert_str_eq(x, expected);
+    free(x);
 }

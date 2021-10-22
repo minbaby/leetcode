@@ -20,7 +20,6 @@ file(STRINGS cmake-var/h.txt GET_HEADER_VAR)
 file(STRINGS cmake-var/c.txt GET_SOURCE_VAR)
 file(STRINGS cmake-var/test.txt GET_TEST_VAR)
 
-
 set(HEADER_FILES ${GET_SOURCE_VAR})
 
 set(SOURCE_FILES ${GET_SOURCE_VAR})
@@ -46,3 +45,5 @@ if (UNITTEST_FOUND)
 
     add_test(runtest runtest)
 endif (UNITTEST_FOUND)
+
+message("trigger at # 2021/10/26 03:57:32 #")
