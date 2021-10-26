@@ -36,3 +36,4 @@ src/main/149-max-points-on-a-line/149_test.c
 src/main/150-evaluate-reverse-polish-notation/150_test.c
 src/main/151-reverse-words-in-a-string/151_test.c
 src/main/152-maximum-product-subarray/152_test.c
+src/main/153-find-minimum-in-rotated-sorted-array/153_test.c

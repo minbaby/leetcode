@@ -84,7 +84,7 @@ class CreateCommand extends Command
         preg_match_all($regex, $content, $matchAll);
 
         $now = date("Y/m/d H:i:s");
-        $content = preg_replace($regex, "$1{$now} $3", $content);
+        $content = preg_replace($regex, "$1 {$now} $3", $content);
         file_put_contents("CMakeLists.txt", $content);
     }
 }
